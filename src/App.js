@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { getFlattenedUsersLocations } from './helper';
+import LocationsTable from './LocationsTable';
 import './App.css';
 
 function App() {
+  const [infoLoaded, setInfoLoaded] = useState(false);
+  const [locations, setLocations] = useState([]);
+
+  useEffect(() => {
+    const loadLocations = async () => {
+      const locations = await getFlattenedUsersLocations();
+      setLocations(locations);
+      setInfoLoaded(true);
+    };
+
+    loadLocations();
+  }, []);
+
+  if (!infoLoaded) return <p>Loading ..</p>;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Locations</h1>
+      <LocationsTable locations={locations} />
     </div>
   );
 }

@@ -2,9 +2,14 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table, tr {
+  text-align: center;
+  border: 1px solid black;
+}
+
+table {
+  margin: 2rem auto;
+  border-collapse: collapse;
 }
 
 @media (prefers-reduced-motion: no-preference) {
