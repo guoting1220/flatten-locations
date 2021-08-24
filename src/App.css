@@ -12,6 +12,37 @@ table {
   border-collapse: collapse;
 }
 
+.SearchForm form {
+  margin: 2rem;
+}
+
+.SearchForm .btn {
+  margin: 1rem auto;
+  padding: .5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#searchBtn {
+  color: white;
+  background-color: cadetblue;
+  outline: none;
+  border: none;
+}
+
+#clearBtn {
+  margin: 1rem;
+  background-color: white;
+}
+
+.sortBtn {
+  cursor: pointer;
+}
+
+thead {
+  background-color: burlywood;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
